@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
 import Dashboard from './components/Dashboard.vue'
+import WebSocketDemo from './components/WebSocketDemo.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import Dashboard from './components/Dashboard.vue'
     <div class="flex">
       <Sidebar />
       <Dashboard />
+      <WebSocketDemo />
     </div>
   </div>
 </template>
