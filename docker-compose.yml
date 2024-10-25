@@ -1,9 +1,21 @@
 version: '3.8'
 services:
-  websocket:
+  server:
     build: .
     ports:
       - "3000:3000"
-    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: bun run server
+
+  client:
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: bun run dev
     environment:
-      - NODE_ENV=production
+      - VITE_WS_URL=ws://localhost:3000
